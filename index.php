@@ -25,30 +25,6 @@ $version = '2.8-BA-API';
 //
 //echo doctype and headers
 echo '
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-<body>
-';
-//which api am i using?
-	if(isset($settings['BelowAverageAPI']) AND $settings['BelowAverageAPI'] == 'true')
-	{
-		echo file_get_contents('https://belowaverage.tk/Who\'sOnline/?'.http_build_query($settings).$QUERY_STRING);
-	}
-	else
-	{
-		include('dependencies/api.php');
-	}
-//
-//
-//This guy here is important for me... I use it to collect data on how many hits all my code gets! Yay for stats. Please don't erase it ='( I will cry..
-$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-echo @file_get_contents('http://belowaverage.tk/PhoneHome/index.php?url='.$actual_link.'&version='.$version.'&product=Who\'s%20Online');
-//
-//This of course is the most important part of the whole entire code in the world. It simply closes the php file with a happy ending.
-echo '
-</body>
-</html>
+
 ';
 ?>
